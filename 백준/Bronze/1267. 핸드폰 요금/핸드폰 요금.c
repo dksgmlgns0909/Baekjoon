@@ -1,25 +1,24 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-    int n, cost[20], Y = 0, M = 0;
-    scanf("%d", &n);
-    
-    for(int i=0; i<n; i++){
-        scanf("%d", &cost[i]);
-        
-        Y += cost[i] / 30 + 1;
-        M += cost[i] / 60 + 1;
-    }
-    
-    Y *= 10;
-    M *= 15;
-    
-    if(Y == M)
-        printf("Y M %d", Y);
-    
-    else if( Y > M)
-        printf("M %d", M);
-    
-    else
-        printf("Y %d", Y);
+int main() {
+	int n, M = 0, Y = 0, time;
+
+	scanf("%d", &n);
+
+	for (int i = 0; i < n; i++) {
+		scanf("%d", &time);
+
+		Y += (time / 30 + 1) * 10;
+		M += (time / 60 + 1) * 15;
+	}
+
+	if (M == Y) {
+		printf("Y M %d", M);
+	}
+	else if (M > Y) {
+		printf("Y %d", Y);
+	}
+	else {
+		printf("M %d", M);
+	}
 }
